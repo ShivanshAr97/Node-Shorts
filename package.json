@@ -19,6 +19,7 @@
   "homepage": "https://github.com/ShivanshAr97/Node-Shorts#readme",
   "dependencies": {
     "chalk": "^5.2.0",
+    "nodemon": "^2.0.20",
     "validator": "^13.7.0"
   }
 }
