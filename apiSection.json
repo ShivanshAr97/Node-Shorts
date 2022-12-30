@@ -1,0 +1,17 @@
+[
+    {
+      "id": 1,
+      "name": "susan smith",
+      "job": "web developer"
+    },
+    {
+      "id": 2,
+      "name": "anna johnson",
+      "job": "web designer"
+    },
+    {
+      "id": 3,
+      "name": "peter jones",
+      "job": "intern"
+    }
+  ]
