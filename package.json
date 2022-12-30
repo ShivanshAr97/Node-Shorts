@@ -1,0 +1,24 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "npmMod.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShivanshAr97/Node-Shorts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShivanshAr97/Node-Shorts/issues"
+  },
+  "homepage": "https://github.com/ShivanshAr97/Node-Shorts#readme",
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "validator": "^13.7.0"
+  }
+}
