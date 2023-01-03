@@ -30,5 +30,5 @@ const playlistSchema = new mongoose.Schema({
 
 const Playlist = mongoose.model('Playlist', playlistSchema);
 
-const videos1 = new Playlist({ name: 'Javascript', ctype:',', videos:61, author:"Xyz", active:false });
+const videos1 = new Playlist({ name: 'Javascript', ctype:',', videos:61, author:"Abcd", active:false });
 videos1.save().then(() => console.log('Done'));
