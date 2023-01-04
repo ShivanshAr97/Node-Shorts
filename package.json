@@ -4,9 +4,7 @@
   "description": "",
   "main": "npmMod.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "run":"node restful_api/restful_api.js",
-    "dev":"nodemon restful_api/restful_api.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",

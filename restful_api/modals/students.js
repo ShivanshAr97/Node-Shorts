@@ -25,5 +25,13 @@ const studentSchema =  new mongoose.Schema({
         maxlength:10,
         required:true,
         unique:true
+    },
+    address:{
+        type:String,
+        required:true
     }
 })
+
+const Student = mongoose.model('student', studentSchema);
+
+module.exports = Student
