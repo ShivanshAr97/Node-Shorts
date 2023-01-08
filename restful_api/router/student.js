@@ -1,39 +1,42 @@
 const express = require("express")
 const router = new express.Router();
+const student = require("../modals/students")
 
-const Student = require("../modals/students")
+router.get("/", async (req, res) => {
+    res.send("Hello")
+})
 
 router.get("/student", async (req, res) => {
     try {
-        const result = await Student.find()
-        res.send(result);
+        const result = await student.find()
+        res.status(201).send(result);
     } catch (err) {
-        res.send(err)
+        res.status(400).send(err)
     }
 })
 
-router.get("/student/:name", async (req,res) =>{
+router.get("/student/:name", async (req, res) => {
     try {
         console.log(req.params.name);
         const name = req.params.name
-        const result2 = await Student.find({name})
+        const result2 = await student.find({ name })
         if (!result2) {
             res.status(404).send("No data found")
         }
-        else{
-        res.send(result2);
-    }
+        else {
+            res.send(result2);
+        }
     } catch (err) {
         res.status(500).send(err)
     }
 })
 
-router.post("/student/", async (req, res) => {
-    console.log(req.body)
-    const result = new Student(req.body)
+router.post("/student", async (req, res) => {
     try {
-        const result2 = await result.save()
-        res.status(201).send(result2)
+        const addingData = new student(req.body)
+        console.log(addingData)
+        const result = await addingData.save();
+        res.status(201).send(result)
     } catch (err) {
         res.status(400).send(err)
     }
@@ -41,23 +44,23 @@ router.post("/student/", async (req, res) => {
 
 router.patch("/student/:id", async (req, res) => {
     try {
-        const id = req.params.id
-        const result3 = await Student.findByIdAndUpdate(id, req.body, {
-            new:true
+        const _id = req.params.id
+        const result = await student.findByIdAndUpdate({ _id }, req.body, {
+            new: true
         })
-        res.send(result3)
+        res.status(201).send(result)
     } catch (err) {
-        res.send(err)
+        res.status(400).send(err)
     }
 })
 
-router.delete("/student/:id", async(req,res)=>{
+router.delete("/student/:id", async (req, res) => {
     try {
-        const id = req.params.id
-        const result4 = await Student.findByIdAndDelete(id)
-        res.send(result4)
+        const _id = req.params.id
+        const result = await student.findByIdAndDelete({ _id })
+        res.status(201).send(result)
     } catch (err) {
-        res.send(err)
+        res.status(400).send(err)
     }
 })
 
